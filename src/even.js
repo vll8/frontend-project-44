@@ -10,7 +10,7 @@ const helloUserName = () => {
 const userName = helloUserName();
 
 // генерация случайного числа от 1 до 100
-const getrandomNumber = () => {
+const getRandomNumber = () => {
   const start = 1;
   const end = 100;
   return Math.floor(Math.random() * (end - start + 1)) + start;
@@ -40,7 +40,7 @@ const playAnEvenOdd = () => {
   let result = '';
   const correct = 'Correct!';
   while (i < 3) {
-    const randomNumber = getrandomNumber();
+    const randomNumber = getRandomNumber();
     console.log(`Question: ${randomNumber}`);
 
     const even = isEven(randomNumber);
