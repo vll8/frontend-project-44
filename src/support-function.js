@@ -17,4 +17,21 @@ export const getRandomOperation = () => {
   return result;
 };
 
+export const getProgression = () => {
+  let randomNumber = getRandomNumber(3, 18);
+  const randomProgression = getRandomNumber(5, 24);
+  const array = [];
+  for (let i = 0; i < 10; i += 1) {
+    array.push(randomNumber + randomProgression);
+    randomNumber += randomProgression;
+  }
+  return array;
+};
+
+export const getOmissionInProgression = () => {
+  const progression = getProgression();
+  const randomElement = getRandomNumber(0, 9);
+  progression[randomElement] = '...';
+  return progression;
+};
 export default getRandomNumber;
