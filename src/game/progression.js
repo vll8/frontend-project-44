@@ -3,8 +3,7 @@ import { getOmissionInProgression } from '../support-function.js';
 const gameRulesProgression = 'What number is missing in the progression?';
 
 const isProgression = (progression) => {
-  const array = [];
-  array.push(...progression);
+  const array = [...progression];
   const start = 0;
   const end = array.length - 1;
   let result = 0;
