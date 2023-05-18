@@ -1,6 +1,6 @@
-import readlineSync from 'readline-sync';
-import helloUserName from '../index.js';
 import getRandomNumber, { getRandomOperation } from '../support-function.js';
+
+const gameRulesCalc = 'What is the result of the expression?';
 
 const calculateResultOperation = (a, operation, b) => {
   let result = 0;
@@ -14,31 +14,14 @@ const calculateResultOperation = (a, operation, b) => {
   return result;
 };
 
-const playCalc = () => {
-  const raund = 3;
-  const userName = helloUserName();
-
-  console.log(`Hello, ${userName}!\nWhat is the result of the expression?`);
-
-  for (let i = 0; i < raund; i += 1) {
-    const randomOperation = getRandomOperation();
-    const randomNumber1 = getRandomNumber(1, 20);
-    const randomNumber2 = getRandomNumber(1, 20);
-    console.log(`Question: ${randomNumber1} ${randomOperation} ${randomNumber2}`);
-
-    const correctAnswer = calculateResultOperation(randomNumber1, randomOperation, randomNumber2);
-
-    const userAnswer = Number(readlineSync.question('Your answer: '));
-    const correct = 'Correct!';
-    const gameOver = `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
-    if (userAnswer !== correctAnswer) {
-      console.log(gameOver);
-      break;
-    } else {
-      console.log(correct);
-    }
-  }
-  console.log(`Congratulations, ${userName}!`);
+export const getQuestionCalc = () => {
+  const array = [];
+  const randomOperation = getRandomOperation();
+  const randomNumber1 = getRandomNumber(1, 30);
+  const randomNumber2 = getRandomNumber(1, 30);
+  array.push([randomNumber1, randomOperation, randomNumber2]);
+  array.push([calculateResultOperation(randomNumber1, randomOperation, randomNumber2)]);
+  return array;
 };
 
-export default playCalc;
+export default gameRulesCalc;

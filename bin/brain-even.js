@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import playAnEvenOdd from '../src/game/even.js';
+import getGameLogic from '../src/index.js';
+import gameRulesEven, { getQuestionEven } from '../src/game/even.js';
 
-playAnEvenOdd();
+getGameLogic(getQuestionEven, gameRulesEven);
