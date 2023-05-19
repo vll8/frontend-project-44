@@ -31,7 +31,7 @@ export const getProgression = () => {
 export const getOmissionInProgression = () => {
   const progression = getProgression();
   const randomElement = getRandomNumber(0, 9);
-  progression[randomElement] = '...';
+  progression[randomElement] = '..';
   return progression;
 };
 export default getRandomNumber;

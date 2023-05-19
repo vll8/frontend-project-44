@@ -8,7 +8,7 @@ const isProgression = (progression) => {
   const end = array.length - 1;
   let result = 0;
   for (let i = start; i < array.length; i += 1) {
-    if (array[i] === '...') {
+    if (array[i] === '..') {
       if (array[i] === array[end]) {
         result = array[i - 1] + (array[i - 1] - array[i - 2]);
       }
