@@ -20,7 +20,7 @@ const isPrime = (num) => {
 
 export const getQuestionPrime = () => {
   const array = [];
-  const randomNumber = getRandomNumber(283, 499);
+  const randomNumber = getRandomNumber(283, 489);
   array.push([randomNumber]);
   array.push([isPrime(randomNumber)]);
   return array;
