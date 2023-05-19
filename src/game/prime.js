@@ -4,17 +4,15 @@ const gameRulesPrime = 'Answer "yes" if given number is prime. Otherwise answer 
 
 const isPrime = (num) => {
   let result = '';
-  const yes = 'yes';
-  const no = 'no';
   if (num === 2) {
-    result = yes;
+    result = 'yes';
   }
   for (let i = 2; i < num; i += 1) {
     if (num % i === 0) {
-      return no;
+      return 'no';
     }
     if (num !== 1) {
-      result = yes;
+      result = 'yes';
     }
   }
   return result;
@@ -22,7 +20,7 @@ const isPrime = (num) => {
 
 export const getQuestionPrime = () => {
   const array = [];
-  const randomNumber = getRandomNumber(283, 499);
+  const randomNumber = getRandomNumber(283, 489);
   array.push([randomNumber]);
   array.push([isPrime(randomNumber)]);
   return array;

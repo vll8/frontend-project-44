@@ -23,7 +23,7 @@ Clone this repository to your machine using 'git clone <ssh/url>'.
 
 #### Step #2
 
-Open the 'frontend-project-44' directory, then type 'make install' and 'npm link' in the console. 
+Open the 'frontend-project-44' directory, then type 'make install' and 'npm link' in the console.
 
 Good for you! The game is now ready to use.
 
@@ -44,7 +44,3 @@ Good for you! The game is now ready to use.
 ### Brain-Progression:
 
 [![asciicast](https://asciinema.org/a/qYD3shhq1AGryJvo2bbcSyaji.svg)](https://asciinema.org/a/qYD3shhq1AGryJvo2bbcSyaji)
-
-### Brain-Prime:
-
-[![asciicast](https://asciinema.org/a/idPdf8Lp3RBTo60kJB93WkPsU.svg)](https://asciinema.org/a/idPdf8Lp3RBTo60kJB93WkPsU)
