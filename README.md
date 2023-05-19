@@ -18,7 +18,8 @@ Brain Games is a set of five console games designed to train your brain. Each ga
 ## **_Installation instructions:_**.
 
 Step #1.
-Clone this repository to your machine using 'git clone <ssh/url>'. 
+Clone this repository to your machine using 'git clone <ssh/url>'.
+
 Step #2
 Open the 'frontend-project-44' directory, then type 'make install' and 'npm link' in the console. 
 
