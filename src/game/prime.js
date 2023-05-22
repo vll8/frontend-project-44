@@ -1,4 +1,5 @@
 import getRandomNumber from '../support-function.js';
+import getGameLogic from '../index.js';
 
 const gameRulesPrime = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -18,7 +19,7 @@ const isPrime = (num) => {
   return result;
 };
 
-export const getQuestionPrime = () => {
+const getQuestionPrime = () => {
   const array = [];
   const randomNumber = getRandomNumber(283, 489);
   array.push([randomNumber]);
@@ -26,4 +27,9 @@ export const getQuestionPrime = () => {
   return array;
 };
 
-export default gameRulesPrime;
+const gamePrime = () => {
+  const logicGamePrime = getGameLogic(getQuestionPrime, gameRulesPrime);
+  return logicGamePrime;
+};
+
+export default gamePrime;

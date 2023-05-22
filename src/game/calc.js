@@ -1,4 +1,5 @@
 import getRandomNumber, { getRandomOperation } from '../support-function.js';
+import getGameLogic from '../index.js';
 
 const gameRulesCalc = 'What is the result of the expression?';
 
@@ -14,7 +15,7 @@ const calculateResultOperation = (a, operation, b) => {
   return result;
 };
 
-export const getQuestionCalc = () => {
+const getQuestionCalc = () => {
   const array = [];
   const randomOperation = getRandomOperation();
   const randomNumber1 = getRandomNumber(1, 30);
@@ -24,4 +25,9 @@ export const getQuestionCalc = () => {
   return array;
 };
 
-export default gameRulesCalc;
+const gameCalc = () => {
+  const logicGameCalc = getGameLogic(getQuestionCalc, gameRulesCalc);
+  return logicGameCalc;
+};
+
+export default gameCalc;

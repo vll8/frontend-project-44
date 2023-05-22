@@ -1,4 +1,5 @@
 import { getOmissionInProgression } from '../support-function.js';
+import getGameLogic from '../index.js';
 
 const gameRulesProgression = 'What number is missing in the progression?';
 
@@ -23,7 +24,7 @@ const isProgression = (progression) => {
   return result;
 };
 
-export const getQuestionProgression = () => {
+const getQuestionProgression = () => {
   const array = [];
   const randomProgression = getOmissionInProgression();
   array.push(...[randomProgression]);
@@ -31,4 +32,9 @@ export const getQuestionProgression = () => {
   return array;
 };
 
-export default gameRulesProgression;
+const gameProgression = () => {
+  const logicGameProgression = getGameLogic(getQuestionProgression, gameRulesProgression);
+  return logicGameProgression;
+};
+
+export default gameProgression;
