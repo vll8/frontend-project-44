@@ -21,7 +21,9 @@ const isPrime = (num) => {
 
 const getQuestionPrime = () => {
   const array = [];
-  const randomNumber = getRandomNumber(283, 489);
+  const start = 283;
+  const end = 489;
+  const randomNumber = getRandomNumber(start, end);
   array.push([randomNumber]);
   array.push([isPrime(randomNumber)]);
   return array;

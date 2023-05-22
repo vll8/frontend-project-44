@@ -13,8 +13,10 @@ const findGcd = (n, m) => {
 
 const getQuestionGcd = () => {
   const array = [];
-  const randomNumber1 = getRandomNumber(1, 50);
-  const randomNumber2 = getRandomNumber(1, 50);
+  const start = 1;
+  const end = 50;
+  const randomNumber1 = getRandomNumber(start, end);
+  const randomNumber2 = getRandomNumber(start, end);
   array.push([randomNumber1, randomNumber2]);
   array.push([findGcd(randomNumber1, randomNumber2)]);
   return array;

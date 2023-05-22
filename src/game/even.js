@@ -7,7 +7,9 @@ const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
 
 const getQuestionEven = () => {
   const array = [];
-  const randomNumber = getRandomNumber(1, 1000);
+  const start = 1;
+  const end = 1000;
+  const randomNumber = getRandomNumber(start, end);
   array.push([randomNumber]);
   array.push([isEven(randomNumber)]);
   return array;

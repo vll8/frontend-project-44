@@ -4,8 +4,10 @@ import getGameLogic from '../index.js';
 const gameRulesCalc = 'What is the result of the expression?';
 
 const getRandomOperation = () => {
+  const startRangeOperation = 0;
+  const endRangeOperation = 2;
   const array = ['+', '-', '*'];
-  const operation = getRandomNumber(0, 2);
+  const operation = getRandomNumber(startRangeOperation, endRangeOperation);
   return array[operation];
 };
 
@@ -23,9 +25,11 @@ const calculateResultOperation = (a, operation, b) => {
 
 const getQuestionCalc = () => {
   const array = [];
+  const start = 1;
+  const end = 30;
   const randomOperation = getRandomOperation();
-  const randomNumber1 = getRandomNumber(1, 30);
-  const randomNumber2 = getRandomNumber(1, 30);
+  const randomNumber1 = getRandomNumber(start, end);
+  const randomNumber2 = getRandomNumber(start, end);
   array.push([randomNumber1, randomOperation, randomNumber2]);
   array.push([calculateResultOperation(randomNumber1, randomOperation, randomNumber2)]);
   return array;
