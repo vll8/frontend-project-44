@@ -4,20 +4,9 @@ import getGameLogic from '../index.js';
 const gameRulesCalc = 'What is the result of the expression?';
 
 const getRandomOperation = () => {
-  const sum = '+';
-  const sub = '-';
-  const multiplication = '*';
-  const operation = getRandomNumber(1, 3);
-  let result = '';
-
-  if (operation === 1) {
-    result = sum;
-  } else if (operation === 2) {
-    result = sub;
-  } else {
-    result = multiplication;
-  }
-  return result;
+  const array = ['+', '-', '*'];
+  const operation = getRandomNumber(0, 2);
+  return array[operation];
 };
 
 const calculateResultOperation = (a, operation, b) => {
