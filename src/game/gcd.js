@@ -17,8 +17,8 @@ const getQuestionGcd = () => {
   const end = 50;
   const randomNumber1 = getRandomNumber(start, end);
   const randomNumber2 = getRandomNumber(start, end);
-  array.push([randomNumber1, randomNumber2]);
-  array.push([findGcd(randomNumber1, randomNumber2)]);
+  array.push([randomNumber1, randomNumber2].join(' '));
+  array.push([findGcd(randomNumber1, randomNumber2)].join(' '));
   return array;
 };
 

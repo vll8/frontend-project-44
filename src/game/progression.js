@@ -61,8 +61,8 @@ const isProgression = (progression) => {
 const getQuestionProgression = () => {
   const array = [];
   const randomProgression = getOmissionInProgression();
-  array.push(...[randomProgression]);
-  array.push([isProgression(randomProgression)]);
+  array.push(...[randomProgression.join(' ')]);
+  array.push([isProgression(randomProgression)].join(' '));
   return array;
 };
 

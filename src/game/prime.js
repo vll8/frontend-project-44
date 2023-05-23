@@ -24,8 +24,8 @@ const getQuestionPrime = () => {
   const start = 283;
   const end = 489;
   const randomNumber = getRandomNumber(start, end);
-  array.push([randomNumber]);
-  array.push([isPrime(randomNumber)]);
+  array.push([randomNumber].join(' '));
+  array.push([isPrime(randomNumber)].join(' '));
   return array;
 };
 

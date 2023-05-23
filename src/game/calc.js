@@ -30,8 +30,8 @@ const getQuestionCalc = () => {
   const randomOperation = getRandomOperation();
   const randomNumber1 = getRandomNumber(start, end);
   const randomNumber2 = getRandomNumber(start, end);
-  array.push([randomNumber1, randomOperation, randomNumber2]);
-  array.push([calculateResultOperation(randomNumber1, randomOperation, randomNumber2)]);
+  array.push([randomNumber1, randomOperation, randomNumber2].join(' '));
+  array.push([calculateResultOperation(randomNumber1, randomOperation, randomNumber2)].join(' '));
   return array;
 };
 

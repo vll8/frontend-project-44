@@ -11,18 +11,17 @@ const getGameLogic = (game, gameRules) => {
   const userName = helloUserName();
   console.log(`Hello, ${userName}!\n${gameRules}`);
   for (let i = 0; i < raund; i += 1) {
-    const array = game();
-    console.log(`Question: ${array[0].join(' ')}`);
-    const correctAnswer = array[1].join('');
+    const [task, answer] = game();
+    console.log(`Question: ${task}`);
+    const correctAnswer = answer;
     const userAnswer = readlineSync.question('Your answer: ');
     const correct = 'Correct!';
     const gameOver = `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
     if (userAnswer !== correctAnswer) {
       console.log(gameOver);
-      break;
-    } else {
-      console.log(correct);
+      return;
     }
+    console.log(correct);
   }
   console.log(`Congratulations, ${userName}!`);
 };
