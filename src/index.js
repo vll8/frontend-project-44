@@ -15,13 +15,11 @@ const getGameLogic = (game, gameRules) => {
     console.log(`Question: ${task}`);
     const correctAnswer = answer;
     const userAnswer = readlineSync.question('Your answer: ');
-    const correct = 'Correct!';
-    const gameOver = `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
     if (userAnswer !== correctAnswer) {
-      console.log(gameOver);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
       return;
     }
-    console.log(correct);
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${userName}!`);
 };
