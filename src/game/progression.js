@@ -3,23 +3,33 @@ import getGameLogic from '../index.js';
 
 const gameRulesProgression = 'What number is missing in the progression?';
 
-export const getProgression = () => {
+const getStartProgression = () => {
   const startRangeNumber = 3;
   const endRangeNumber = 18;
-  let randomNumber = getRandomNumber(startRangeNumber, endRangeNumber);
+  const startProgression = getRandomNumber(startRangeNumber, endRangeNumber);
+  return startProgression;
+};
+
+const getRandomStepProgression = () => {
   const startRangeProgression = 5;
   const endRangeProgression = 24;
-  const randomProgression = getRandomNumber(startRangeProgression, endRangeProgression);
+  const randomStepProgression = getRandomNumber(startRangeProgression, endRangeProgression);
+  return randomStepProgression;
+};
+
+const getProgression = (startNumberProgression, stepNumberProgression) => {
   const array = [];
+  let startProgression = startNumberProgression();
+  const stepProgression = stepNumberProgression();
   for (let i = 0; i < 10; i += 1) {
-    array.push(randomNumber + randomProgression);
-    randomNumber += randomProgression;
+    array.push(startProgression + stepProgression);
+    startProgression += stepProgression;
   }
   return array;
 };
 
 const getOmissionInProgression = () => {
-  const progression = getProgression();
+  const progression = getProgression(getStartProgression, getRandomStepProgression);
   const startRangeElement = 0;
   const endRangeElement = 9;
   const randomElement = getRandomNumber(startRangeElement, endRangeElement);
