@@ -3,15 +3,16 @@ import getGameLogic from '../index.js';
 
 const rulesGameEven = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
+const isEven = (num) => (num % 2 === 0);
 
 const getQuestionEven = () => {
   const array = [];
   const start = 1;
   const end = 1000;
   const randomNumber = getRandomNumber(start, end);
+  const correctAnswerEven = isEven(randomNumber) ? 'yes' : 'no';
   array.push(randomNumber);
-  array.push(isEven(randomNumber));
+  array.push(correctAnswerEven);
   return array;
 };
 
