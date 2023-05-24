@@ -15,11 +15,12 @@ const isPrime = (num) => {
   return true;
 };
 
+const startRangePrime = 283;
+const endRangePrime = 489;
+
 const getQuestionPrime = () => {
   const array = [];
-  const start = 283;
-  const end = 489;
-  const randomNumber = getRandomNumber(start, end);
+  const randomNumber = getRandomNumber(startRangePrime, endRangePrime);
   const correctAnswerPrime = isPrime(randomNumber) ? 'yes' : 'no';
   array.push(randomNumber);
   array.push(correctAnswerPrime);

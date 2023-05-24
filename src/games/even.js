@@ -5,11 +5,12 @@ const rulesGameEven = 'Answer "yes" if the number is even, otherwise answer "no"
 
 const isEven = (num) => (num % 2 === 0);
 
+const startRangeEven = 1;
+const endRangeEven = 1000;
+
 const getQuestionEven = () => {
   const array = [];
-  const start = 1;
-  const end = 1000;
-  const randomNumber = getRandomNumber(start, end);
+  const randomNumber = getRandomNumber(startRangeEven, endRangeEven);
   const correctAnswerEven = isEven(randomNumber) ? 'yes' : 'no';
   array.push(randomNumber);
   array.push(correctAnswerEven);
