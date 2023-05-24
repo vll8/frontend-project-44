@@ -13,14 +13,21 @@ const getRandomOperation = () => {
 
 const calculateResultOperation = (a, operation, b) => {
   let result = 0;
-  if (operation === '+') {
-    result = a + b;
-  } else if (operation === '-') {
-    result = a - b;
-  } else {
-    result = a * b;
+  switch (operation) {
+    case '+':
+      result = a + b;
+      break;
+    case '-':
+      result = a - b;
+      break;
+    case '*':
+      result = a * b;
+      break;
+    default:
+      result = Error(`Unknown operation: '${operation}'!`);
+      break;
   }
-  return result;
+  return `${result}`;
 };
 
 const getQuestionCalc = () => {
@@ -30,8 +37,8 @@ const getQuestionCalc = () => {
   const randomOperation = getRandomOperation();
   const randomNumber1 = getRandomNumber(start, end);
   const randomNumber2 = getRandomNumber(start, end);
-  array.push([randomNumber1, randomOperation, randomNumber2].join(' '));
-  array.push([calculateResultOperation(randomNumber1, randomOperation, randomNumber2)].join(' '));
+  array.push(`${randomNumber1} ${randomOperation} ${randomNumber2}`);
+  array.push(calculateResultOperation(randomNumber1, randomOperation, randomNumber2));
   return array;
 };
 

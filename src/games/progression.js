@@ -17,22 +17,15 @@ const getRandomStepProgression = () => {
   return randomStepProgression;
 };
 
-const getProgression = (startNumberProgression, stepNumberProgression) => {
-  const array = [];
-  let startProgression = startNumberProgression();
-  const stepProgression = stepNumberProgression();
+const getProgression = (start, step) => {
+  const progression = [];
+  let startProgression = start();
+  const stepProgression = step();
+  const randomElement = getRandomNumber(0, 9);
   for (let i = 0; i < 10; i += 1) {
-    array.push(startProgression + stepProgression);
+    progression.push(startProgression + stepProgression);
     startProgression += stepProgression;
   }
-  return array;
-};
-
-const getOmissionInProgression = () => {
-  const progression = getProgression(getStartProgression, getRandomStepProgression);
-  const startRangeElement = 0;
-  const endRangeElement = 9;
-  const randomElement = getRandomNumber(startRangeElement, endRangeElement);
   progression[randomElement] = '..';
   return progression;
 };
@@ -55,14 +48,14 @@ const isProgression = (progression) => {
       }
     }
   }
-  return result;
+  return `${result}`;
 };
 
 const getQuestionProgression = () => {
   const array = [];
-  const randomProgression = getOmissionInProgression();
-  array.push(...[randomProgression.join(' ')]);
-  array.push([isProgression(randomProgression)].join(' '));
+  const randomProgression = getProgression(getStartProgression, getRandomStepProgression);
+  array.push(randomProgression.join(' '));
+  array.push(isProgression(randomProgression));
   return array;
 };
 

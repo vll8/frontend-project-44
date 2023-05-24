@@ -8,7 +8,7 @@ const findGcd = (n, m) => {
     const k = n % m;
     return findGcd(m, k);
   }
-  return n;
+  return `${n}`;
 };
 
 const getQuestionGcd = () => {
@@ -18,7 +18,7 @@ const getQuestionGcd = () => {
   const randomNumber1 = getRandomNumber(start, end);
   const randomNumber2 = getRandomNumber(start, end);
   array.push([randomNumber1, randomNumber2].join(' '));
-  array.push([findGcd(randomNumber1, randomNumber2)].join(' '));
+  array.push(findGcd(randomNumber1, randomNumber2));
   return array;
 };
 

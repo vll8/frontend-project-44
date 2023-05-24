@@ -10,8 +10,8 @@ const getQuestionEven = () => {
   const start = 1;
   const end = 1000;
   const randomNumber = getRandomNumber(start, end);
-  array.push([randomNumber].join(' '));
-  array.push([isEven(randomNumber)].join(' '));
+  array.push(randomNumber);
+  array.push(isEven(randomNumber));
   return array;
 };
 
